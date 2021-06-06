@@ -19,6 +19,7 @@ import (
 	"github.com/jonas747/yagpdb/common"
 	"github.com/jonas747/yagpdb/common/scheduledevents2"
 	"github.com/sirupsen/logrus"
+	"github.com/vmihailenco/msgpack"
 )
 
 var (
@@ -112,6 +113,10 @@ func RegisterSetupFunc(f ContextSetupFunc) {
 
 func init() {
 	RegisterSetupFunc(baseContextFuncs)
+
+	msgpack.RegisterExt(1, (*SDict)(nil))
+	msgpack.RegisterExt(2, (*Dict)(nil))
+	msgpack.RegisterExt(3, (*Slice)(nil))
 }
 
 // set by the premium package to return wether this guild is premium or not
@@ -647,7 +652,7 @@ func (s Slice) Set(index int, item interface{}) (string, error) {
 }
 
 func (s Slice) AppendSlice(slice interface{}) (interface{}, error) {
-	val := reflect.ValueOf(slice)
+	val, _ := indirect(reflect.ValueOf(slice))
 	switch val.Kind() {
 	case reflect.Slice, reflect.Array:
 	// this is valid

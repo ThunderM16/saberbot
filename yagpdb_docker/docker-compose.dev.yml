@@ -21,8 +21,8 @@ services:
       - "/app/yagpdb"
       - "-all"
       - "-pa"
-      - "-exthttps=true"
-      - "-https=false"
+      - "-exthttps=false"
+      - "-https=true"
     depends_on:
       - redis
       - db

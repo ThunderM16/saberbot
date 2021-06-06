@@ -42,6 +42,6 @@ Please solve the following reCAPTCHA to make sure you're not a robot`
 )
 
 const DefaultDMMessage = `{{sendMessage nil (cembed
-"title" "Are you a bot we hope not!?"
-"description" (printf "Please solve the following reCAPTCHA at this link to make sure you're human, before you can enter %s: %s" .Server.Name .Link)
+"title" "Are you a bot?"
+"description" (printf "Please solve the CAPTCHA at this link to make sure you're human, before you can enter %s: %s" .Server.Name .Link)
 )}}`
