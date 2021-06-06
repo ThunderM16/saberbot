@@ -49,10 +49,10 @@ body{
   background:#29b6f6;
 }
 #m_background {
-  height: auto;
-  width: auto;
+  height: 100%;
+  width: 100%;
   background-image: url();
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   z-index: -1;
   background-attachment: fixed;
   background-position: center;
