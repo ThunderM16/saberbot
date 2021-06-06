@@ -1,4 +1,4 @@
-YAGPDB
+SaberBot
 ================
 
 ### Yet another general purpose discord bot
@@ -6,11 +6,11 @@ YAGPDB
 YAGPDB is a multifunctional, modular Discord bot. It's modular in that plugins exist for the most part on their own (with exceptions to some lazy things in the main stylesheet), some plugins do however depend on other plugins (most plugins depend on the commands plugin, for example).
 
 **Links**
- - [YAGPDB.xyz](http://yagpdb.xyz)
- - [For updates and support join my discord server](https://discord.gg/4udtcA5)
- - [The documentation of YAGPDB](https://docs.yagpdb.xyz/)
+ - [saberbot.xyz](http://saberbot.xyz)
+ - [For updates and support join my discord server](https://discord.io/shwtf)
+ - [The documentation of YAGPDB also is for SaberBot](https://docs.yagpdb.xyz/)
 
-### Running YAGPDB yourself
+### Running SaberBot yourself
 
 Running this bot may seem challenging, and that's because I don't have time to make it easy to run for everyone, for the most part, it should run fine after the initial work has been done. Please view [this page](https://docs.yagpdb.xyz/development/self-hosting-with-docker) for more information.
 
@@ -32,7 +32,7 @@ I will put breaking changes in the breaking_changes.md file, which you should al
 
 Directions on creating an app and getting credentials may be found
 [here](https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token).
-YAGPDB does not require you to authorize the bot: all of that will be handled
+SaberBot does not require you to authorize the bot: all of that will be handled
 via the Control Panel.
 
 In addition, you will need to add the following urls to the bot's "REDIRECT URI(S)" configuration:
@@ -46,7 +46,7 @@ If you have docker-compose installed, it will offer the fastest route to getting
 up-and-running.
 
 ```bash
-git clone https://github.com/jonas747/yagpdb
+git clone https://github.com/shk8s/saberbot
 cp yagpdb/yagpdb_docker/{app.example.env,app.env}
 cp yagpdb/yagpdb_docker/{db.example.env,db.env}
 ```
@@ -55,7 +55,7 @@ Edit `app.env` and `db.env` to specify the Discord bot values from above.
 
 Make sure ports 80 and 443 are accessible on your network and launch:
 
-    docker-compose -f yagpdb/yagpdb_docker/docker-compose.yml up
+    docker-compose -f saberbot/yagpdb_docker/docker-compose.yml up
 
 The bot will connect automatically and the control panel will be available via
 your host after a short setup.
@@ -67,11 +67,11 @@ First, start the proxy. This needs to be started only once and is shared by all
 websites:
 
     docker network create proxy-tier
-    docker-compose -p proxy yagpdb/yagpdb_docker/docker-compose.proxy.yml up
+    docker-compose -p proxy saberbot/yagpdb_docker/docker-compose.proxy.yml up
 
 And then start the bot using the proxy:
 
-    docker-compose -f yagpdb/yagpdb_docker/docker-compose.proxied.yml up
+    docker-compose -f saberbot/yagpdb_docker/docker-compose.proxied.yml up
 
 #### Standalone/Manual setup
 
